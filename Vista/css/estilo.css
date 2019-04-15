@@ -1,0 +1,108 @@
+/* TRABAJO1 BOOTSTRAP EJ 4 */
+
+.header{
+    background: green;
+}
+.box{
+    background:red;
+    text-align: center;
+    display: block;
+    padding: 2em;
+}
+.footer{
+    background: yellow;
+}
+.f1{
+    text-align: right;
+}
+.f2{
+    text-align: left;
+}
+
+/* Small devices (landscape phones, less than 768px)*/
+@media (max-width: 767.98px) {
+
+    .header{
+        background: lightblue;
+        text-align: center;
+    }
+    .box{
+        background: red;
+    }
+    .box1{
+        text-align: left;
+    }
+    .box2{
+        text-align: right;
+    }
+    .box3{
+        text-align: center;
+        background: green;
+    }
+    .footer{
+        text-align: center;
+    }
+ }
+
+
+/* Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+
+    .header{
+        background: lightsalmon;
+    }
+    .box1{
+        text-align: left;
+    }
+    .box2{
+        text-align: center;
+        background: lightblue;
+    }
+    .box3{
+        text-align: right;
+    }
+    .footer{
+        text-align: center;
+    }
+ }
+
+
+
+/* TRABAJO1 BOOTSTRAP EJ 5 */
+.section {
+  padding: 1em 0;
+  border: 2px solid black;
+}
+
+.content div .col-cont {
+  padding: 3em;
+  border: 2px solid black;
+  margin: 0.5em 0;
+}
+
+.green {
+  background-color: green;
+}
+
+.pink {
+  background-color: pink;
+}
+
+.gris {
+  background-color: gray;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.identificador {
+  background-color: aqua;
+  border: 2px solid black;
+  padding: 1em 0;
+}
+
+.nav-tabs .nav-link.active {
+  color: #0e0b16;
+  background-color: rgba(162, 57, 202, 0.2);
+}
