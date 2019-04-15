@@ -30,16 +30,20 @@ $(document).ready(function(){
 
     })
 
-    /* EJ 3 */
+
+
+    /** Cargar Jugadores */
+    cargarJugadores()
+
+   /** EJ 3 */
     /** Selecciona al jugador por id al clickearlo */
-    $('.jugador').click(function(){
-      console.log("click")
+    $('ul.jugadores').on('click', 'li.jugador', function(){
 
       var id = $(this).attr('id');
-
       getJugador(id);
 
     })
+
 
     /* EJ 4 */
     $(".ej4 .enviar").click(function(){
@@ -158,6 +162,106 @@ function getEjercicio(ej) {
 
 }
 
+//Carga de forma dinamica mediante un llamado al archivo jugadores.json la informaicon de los jugadores
+function cargarJugadores(){
+
+  $.ajax({
+    url: 'jugadores.json',
+    type: 'POST',
+    dataType: 'json',
+    cache: false,
+    contentType: false,
+    processData: false,
+    beforeSend: function(response){
+      /** remove la info del modal */
+    }
+  }).done(function(response){
+
+
+    var html;
+    $.each(response, function(index, element){
+
+      html = '<li class="jugador" id="'+element.id+'" data-toggle="modal" data-target="#jugadorModal">'
+      html+=    '<div  class="col-1">'
+      html+=        '<img src="'+element.img+'" alt="">'
+      html+=    '</div>'
+      html+= '</li>'
+
+      $('ul.jugadores').append(html);
+
+    })
+
+
+  }).fail(function(request, errorType, errorMessage){
+    //timeout, error, abort, parseerror
+    console.log(errorType);
+    console.log(errorMessage);
+
+
+})
+
+
+}
+
+//Abre un modal con la descripcion del jugador seleccionado por id
+function getJugador(id){
+
+  var datos = new FormData();
+  datos.append("id", id);
+
+  $.ajax({
+    url: 'jugadores.json',
+    type: 'POST',
+    dataType: 'json',
+    cache: false,
+    contentType: false,
+    processData: false,
+    beforeSend: function(response){
+      $('div.modal-title').html("");
+    }
+  }).done(function(response){
+      console.log(id);
+
+    var html;
+      $.each(response, function(index, element){
+        if (element.id == id) {
+          html = '<div class="modal fade" id="jugadorModal" tabindex="-1" role="dialog">';
+          html+=  '<div class="modal-dialog" role="document">';
+          html+=  '<div class="modal-content">';
+          html+=  '<div class="modal-header">';
+          html+=  '<h5 class="modal-title">'+element.nombre+'</h5>';
+          html+=  '<button type="button" class="close" data-dismiss="modal" aria-label="Close">';
+          html+=  '<span aria-hidden="true">&times;</span>';
+          html+=  '  </button>';
+          html+=  '</div>';
+          html+=  '<div class="modal-body">';
+          html+=  '<p>'+element.descripcion+'</p>';
+          html+=  '</div>';
+          html+= '<div class="modal-footer">';
+          html+= '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>';
+          html+= '<button type="button" class="btn btn-primary">Save changes</button>';
+          html+=  '</div>';
+          html+=  '</div>';
+
+
+    $('div.ModalJugador').append(html);
+
+    console.log(element.nombre);
+        }
+      })
+
+
+  }).fail(function(request, errorType, errorMessage){
+    //timeout, error, abort, parseerror
+    console.log(errorType);
+    console.log(errorMessage);
+
+
+})
+}
+
+
+
 function enviarDatos(nombre, empresa, telefono, email, comentario) {
 
   //Se crea un FormData con los datos del formulario y la funcion a ejecutar en el archivo de la URL
@@ -228,7 +332,11 @@ function resetForm() {
 //Funcion para validar los datos del formulario de contacto
 function validarDatos(nombre, empresa, telefono, email, comentario){
 
-  console.log(nombre, empresa, telefono, email, comentario)
+  $("#nombre").removeClass("is-invalid")
+  $("#empresa").removeClass("is-invalid")
+  $("#telefono").removeClass("is-invalid")
+  $("#email").removeClass("is-invalid")
+  $("#comentario").removeClass("is-invalid")
 
   //VALIDAR EL NOMBRE
   if(nombre != ""){
@@ -295,8 +403,6 @@ function validarDatos(nombre, empresa, telefono, email, comentario){
 
   //VALIDAR COMENTARIO
   if(comentario == ""){
-
-    console.log("laa")
 
     $("#comentario").addClass("is-invalid");
     $("#comentario").after('<div class="invalid-feedback"><strong>ERROR:</strong> Este campo es obligatorio</div>')
