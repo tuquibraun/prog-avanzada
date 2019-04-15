@@ -1,0 +1,63 @@
+[
+    {
+      "id":"0",
+      "nombre":"Rence Keith Sean PADRIGAO",
+    "descripcion":"jugador20",
+    "img":"Vista/img/filipinas/1.jpg"
+    }, {
+      "id":"1",
+      "nombre":"Terrence John FORTEA",
+    "descripcion":"jugador20",
+    "img":"Vista/img/filipinas/2.jpg"
+    }, {
+      "id":"2",
+      "nombre":"Gerry Austin ABADIANO",
+    "descripcion":"jugador20",
+    "img":"Vista/img/filipinas/3.jpg"
+    },    {
+      "id":"3",
+      "nombre":"Mclaude GUADANA",
+    "descripcion":"jugador20",
+    "img":"Vista/img/filipinas/4.jpg"
+    },    {
+      "id":"4",
+      "nombre":"Kai Zachary SOTTO",
+    "descripcion":"jugador20",
+    "img":"Vista/img/filipinas/5.jpg"
+    },    {
+      "id":"5",
+      "nombre":"Jose Miguel PASCUAL",
+    "descripcion":"jugador20",
+    "img":"Vista/img/filipinas/6.jpg"
+    },    {
+      "id":"6",
+      "nombre":"Recaredo Christian CALIMAG",
+    "descripcion":"jugador20",
+    "img":"Vista/img/filipinas/7.jpg"
+    },    {
+      "id":"7",
+      "nombre":"Yukien ANDRADA",
+    "descripcion":"jugador20",
+    "img":"Vista/img/filipinas/8.jpg"
+    },    {
+      "id":"8",
+      "nombre":"Carl Vincent TAMAYO",
+    "descripcion":"jugador20",
+    "img":"Vista/img/filipinas/9.jpg"
+    },    {
+      "id":"9",
+      "nombre":"Joshua Rafael LAZARO",
+    "descripcion":"jugador20",
+    "img":"Vista/img/filipinas/10.jpg"
+    },    {
+      "id":"10",
+      "nombre":"Shaun Geoffrey CHIU",
+    "descripcion":"jugador20",
+    "img":"Vista/img/filipinas/11.jpg"
+    },    {
+      "id":"11",
+      "nombre":"Raven Angelo CORTEZ",
+    "descripcion":"jugador20",
+    "img":"Vista/img/filipinas/12.jpg"
+    }
+  ]

@@ -1,10 +1,3 @@
-<?php
-
-    include_once 'Controlador/AbmJugador.php';
-
-    $jugadores = AbmJugador::buscar(null);
-
-?>
 
 <div class="row">
     <div class="col-lg-12">
@@ -16,19 +9,27 @@
 </div>
 <div class="row">
 
-  <?php
-    foreach ($jugadores as $jugador) {
+<div class="row">
+    <div class="col-lg-12">
+        <div class="content">
+            La Selección de baloncesto de Filipinas es el equipo formado por jugadores de nacionalidad filipina, donde si no, que representa a la organización "Federación de Baloncesto de Filipinas" ("Samaháng Básketból ng Pilipinas" o "SBP" en filipino) en las competiciones internacionales organizadas por la Federación Internacional de Baloncesto (FIBA) o el Comité Olímpico Internacional (COI): los Juegos Olímpicos, Campeonato mundial de baloncesto y el Campeonato FIBA Asia.
 
-      echo '
+        </div>
+    </div>
+</div>
+<div class="row">
+    <ul class="jugadores" style="list-style:none; float:right">
 
-     <div class="col-1">
-         <img src="Vista/img/filipinas/'.$jugador->getId().'.jpg" alt="" id="'.$jugador->getId().'" class="jugador">
-     </div>
+        </li>
+    </ul>
+</div>
 
-     ';
 
-    }
-  ?>
+
+<!-- MODAL -->
+<div class="ModalJugador">
+</div>
+
 
 </div>
 <div class="row">
