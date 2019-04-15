@@ -1,6 +1,6 @@
 <div class="row">
 
-  <div class="col-md-6 col-lg-3 ">
+  <div class="col-md-6 col-lg-3 mb-5">
       Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
       laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
       architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
@@ -17,7 +17,8 @@
       consequatur, vel illum qui dolorem eum fugiat quo
       voluptas nulla pariatur?
   </div>
-  <div class="col-md-6 col-lg-3 ">
+  
+  <div class="col-md-6 col-lg-3 mb-5">
     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
     laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
     architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
@@ -34,7 +35,8 @@
     consequatur, vel illum qui dolorem eum fugiat quo
     voluptas nulla pariatur?
   </div>
-  <div class="col-md-6 col-lg-3 ">
+  
+  <div class="col-md-6 col-lg-3 mb-5">
     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
     laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
     architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
@@ -51,7 +53,8 @@
     consequatur, vel illum qui dolorem eum fugiat quo
     voluptas nulla pariatur?
   </div>
-  <div class="col-md-6 col-lg-3 ">
+  
+  <div class="col-md-6 col-lg-3 mb-5">
     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
     laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
     architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit

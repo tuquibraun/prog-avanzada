@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+      var offset = null;
+
     /* EJ 1 */
     //Escuchamos los cambios del Select País, cada vez que la seleccion_
     //cambie ejecutamos la funcion getEstados con el respectivo ID de país
@@ -11,7 +13,7 @@ $(document).ready(function(){
 
     })
 
-    /* EJ 2
+    /* EJ 2*/
     $(".nav-link").click(function(event){
 
       $(".nav-link").removeClass("active");
@@ -22,7 +24,11 @@ $(document).ready(function(){
 
       getEjercicio(ej);
 
-    })*/
+      if (ej == 6) {
+          getContactos(offset)
+      }
+
+    })
 
     /* EJ 3 */
     /** Selecciona al jugador por id al clickearlo */
@@ -49,6 +55,7 @@ $(document).ready(function(){
 
       var comentario =  $("textarea#comentario").val();
 
+      //Si los datos son validadaos por el script se ejecuta enviarDatos()
       if (validarDatos(nombre, empresa, telefono, email, comentario)) {
 
         enviarDatos(nombre, empresa, telefono, email, comentario);
@@ -65,21 +72,24 @@ $(document).ready(function(){
 
 
     /* EJ 5 */
-    var offset = null;
-    getContactos(offset)
 
-    $(".pag-adelante").click(function(){
+    $("#nav-tabContent").on('click', $("nav ul button:nth-child(1)"), function(event) {
+
       offset = offset+5;
       setTimeout(function(){
         getContactos(offset)
       }, 1000);
+
     })
 
-    $(".pag-atras").click(function(){
+
+    $("#nav-tabContent").on('click', $("nav ul button:nth-child(2)"), function(event) {
+
       offset = offset-5;
       setTimeout(function(){
         getContactos(offset)
       }, 1000);
+
     })
 
     /* EJ 6 */
@@ -218,6 +228,8 @@ function resetForm() {
 //Funcion para validar los datos del formulario de contacto
 function validarDatos(nombre, empresa, telefono, email, comentario){
 
+  console.log(nombre, empresa, telefono, email, comentario)
+
   //VALIDAR EL NOMBRE
   if(nombre != ""){
 
@@ -241,7 +253,7 @@ function validarDatos(nombre, empresa, telefono, email, comentario){
   }
 
   //VALIDAR EL EMPRESA
-  if(empresa = ""){
+  if(empresa == ""){
 
     $("#empresa").addClass("is-invalid");
     $("#empresa").after('<div class="invalid-feedback"><strong>ERROR:</strong> Este campo es obligatorio</div>')
@@ -251,7 +263,7 @@ function validarDatos(nombre, empresa, telefono, email, comentario){
   }
 
   //VALIDAR EL TELEFONO
-  if(telefono = ""){
+  if(telefono == ""){
 
     $("#telefono").addClass("is-invalid");
     $("#telefono").after('<div class="invalid-feedback"><strong>ERROR:</strong> Este campo es obligatorio</div>')
@@ -282,7 +294,9 @@ function validarDatos(nombre, empresa, telefono, email, comentario){
   }
 
   //VALIDAR COMENTARIO
-  if(comentario = ""){
+  if(comentario == ""){
+
+    console.log("laa")
 
     $("#comentario").addClass("is-invalid");
     $("#comentario").after('<div class="invalid-feedback"><strong>ERROR:</strong> Este campo es obligatorio</div>')
@@ -310,7 +324,7 @@ function getContactos(offset) {
       contentType: false,
       processData: false,
       beforeSend: function(response){
-        $(".tablacontactos").html("")
+        $("#nav-tabContent tbody").html("")
       },
       success: function(response){
       //decodificamos los datos recibidos

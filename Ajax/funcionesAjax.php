@@ -26,7 +26,7 @@ switch ($_POST["funcion"]) {
         validarUsuario();
         break;
 
-  //ej6
+  //ej7
     case 'getEstadosLetras':
         getEstadosLetras();
         break;
@@ -154,9 +154,10 @@ function getContactos() {
   echo json_encode($array);
 
 }
-
+//funcion para validar datos de usuario
 function validarUsuario() {
 
+  //creamos un array con el dato recibido para pasar por parametro en la funcion buscar()
   $param = $array = [
       "usuario" => $_POST['data']
   ];
@@ -164,7 +165,7 @@ function validarUsuario() {
   $objUsuario = new AbmUsuario;
 
   $usuarios = $objUsuario::buscar($param);
-
+  //creamos un array vacio para llenar con los datos recibidos
   $array = [];
 
   foreach ($usuarios as $usuario) {

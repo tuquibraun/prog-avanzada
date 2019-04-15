@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
     <div class="row">
-        <div class="col-md-12 header">
+        <div class="col-md-12 green">
             header
         </div>
     </div>
